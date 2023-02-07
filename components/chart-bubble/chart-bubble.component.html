@@ -1,0 +1,71 @@
+<div class="chart-bubble chart-bubble-{{ chartId }} print-break-inside-avoid">
+
+
+    <div class="chart-bubble__header">
+        <div class="chart-bubble__title card-title">
+            Market Cap Distribution - Fund Weights by Index Market Cap Quintiles
+        </div>
+
+        <div class="chart-bubble__dropdown">
+            <ng-content></ng-content>
+        </div>
+    </div>
+
+    <div class="chart-bubble__legend">
+        <div class="chart-bubble__label"><span class="chart-bubble__pill"></span>{{fundLabel}}</div>
+        <div class="chart-bubble__label"><span class="chart-bubble__pill chart-bubble__pill--bench"></span>{{benchmarkName}}
+        </div>
+    </div>
+
+
+    <div class="chart-bubble__row chart-bubble__row--fund" *ngIf="data">
+        <div *ngFor="let item of ratioFundData" class="chart-bubble__item">
+            <div class="chart-bubble__circle {{item.size < smallThreshold ? 'small' : ''}}"
+                 [style.height]="item.size + 'px'"
+                 [style.width]="item.size + 'px'"
+            >
+                <!--<svg>-->
+                    <!--<g>-->
+                        <!--<circle cx="50%" cy="50%" [attr.r]="item.size / 2"></circle>-->
+                    <!--</g>-->
+                <!--</svg>-->
+                <span class="{{item.size < smallThreshold ? 'small' : ''}}">
+                  {{item.value}}
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="chart-bubble__row chart-bubble__row--sizes">
+        <div class="chart-bubble__stocks-label">Larger Cap Stocks</div>
+        <div class="chart-bubble__stocks-label">Smaller Cap Stocks</div>
+    </div>
+    <div class="chart-bubble__arrow text-center text-muted">
+        Relative to {{benchLabel}} Quintiles
+        <span class="back">
+            <i class="svg" [inlineSVG]="'/assets/svg/arrow-left.svg'"></i>
+        </span>
+        <span class="forward">
+            <i class="svg" [inlineSVG]="'/assets/svg/arrow-right.svg'"></i>
+        </span>
+    </div>
+
+    <div class="chart-bubble__row " *ngIf="benchData">
+        <div *ngFor="let item of ratioBenchData" class="chart-bubble__item">
+
+            <div class="chart-bubble__circle chart-bubble__circle--bench {{item.size < smallThreshold ? 'small' : ''}}"
+                 [style.height]="item.size + 'px'"
+                 [style.width]="item.size + 'px'"
+            >
+                <!--<svg>-->
+                    <!--<g>-->
+                        <!--<circle cx="50%" cy="50%" [attr.r]="item.size / 2"></circle>-->
+                    <!--</g>-->
+                <!--</svg>-->
+                <span class="{{item.size < smallThreshold ? 'small' : ''}}">
+                  {{item.value}}
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

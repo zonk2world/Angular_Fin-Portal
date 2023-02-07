@@ -1,0 +1,57 @@
+@import '~bootstrap/scss/functions';
+@import "~bootstrap/scss/mixins";
+@import '~scss/variables';
+
+.checkbox-dropdown {
+
+  .dropdown-menu {
+    padding: 13px;
+    max-height: 319px;
+    overflow-y: auto;
+    width: 100%;
+
+    .custom-checkbox {
+      display: block;
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+
+      span {
+        font-weight: normal;
+      }
+
+      &.disabled {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &__dropdown {
+    min-width: 150px;
+    margin-right: 16px;
+    font-size: 13px;
+
+
+    &--button {
+      position: relative;
+      outline: 0;
+      position: relative;
+      text-align: left;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      background: $white;
+
+      background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjRweCIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iMjRweCIgZmlsbD0iIzAwMDAwMCI+PHBhdGggZD0iTTI0IDI0SDBWMGgyNHYyNHoiIGZpbGw9Im5vbmUiIG9wYWNpdHk9Ii44NyIvPjxwYXRoIGQ9Ik0xNi41OSA4LjU5TDEyIDEzLjE3IDcuNDEgOC41OSA2IDEwbDYgNiA2LTYtMS40MS0xLjQxeiIvPjwvc3ZnPg==) no-repeat 98% 50%;
+      background-size: 18px;
+
+      &.dropdown-toggle::after {
+        display: none;
+      }
+    }
+  }
+}
+
+
+

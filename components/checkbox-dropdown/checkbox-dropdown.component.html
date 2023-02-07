@@ -1,0 +1,32 @@
+
+<div class="checkbox-dropdown" ngbDropdown>
+  <button class="form-control btn checkbox-dropdown__dropdown--button checkbox-dropdown__dropdown" id="{{id}}"
+          ngbDropdownToggle>
+    {{title}}
+  </button>
+  <div ngbDropdownMenu >
+
+    <!-- Accommodates the "other" checkbox which should not follow rest of checkbox's logic-->
+    <ng-content select=".other-checkbox"></ng-content>
+    <!-- end -->
+
+    <div class="mb-2" *ngFor="let section of checkboxOptions">
+
+      <div class="font-weight-bold mb-2" *ngIf="section.sectionName">{{section.sectionName}}</div>
+      <label class="custom-checkbox" [ngClass]="{'disabled': disableUncheckedOptions && !checkboxValues[filter.name]}"
+                                      [for]="id + filter.name"
+                                      *ngFor="let filter of section.options">
+        <input type="checkbox"
+                [value]="filter.name"
+                [(ngModel)]="checkboxValues[filter.name]"
+                [id]="id + filter.name"
+                (change)="handleCheckboxToggle($event)"
+                [disabled]="disableUncheckedOptions && !checkboxValues[filter.name]">
+        <span class="custom-checkbox__icon"></span>
+        <span>{{filter.name}}</span>
+      </label>
+    </div>
+
+  </div>
+</div>
+

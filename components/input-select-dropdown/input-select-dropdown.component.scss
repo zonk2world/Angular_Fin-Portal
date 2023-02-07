@@ -1,0 +1,144 @@
+@import "~bootstrap/scss/functions";
+@import "~scss/variables";
+
+// Style classes recommended by https://github.com/optimistex/ngx-select-ex
+//
+// ngx-select - Main class of the component.
+// ngx-select_multiple - Modifier of the multiple mode. It's available when the property multiple is true.
+// ngx-select__disabled - Layer for the disabled mode.
+// ngx-select__selected - The common container for displaying selected items.
+// ngx-select__toggle - The toggle for single mode. It's available when the property multiple is false.
+// ngx-select__placeholder - The placeholder item. It's available when the property multiple is false.
+// ngx-select__selected-single - The selected item with single mode. It's available when the property multiple is false.
+// ngx-select__selected-plural - The multiple selected item. It's available when the property multiple is true.
+// ngx-select__allow-clear - The indicator that the selected single item can be removed. It's available while properties the multiple is false and the allowClear is true.
+// ngx-select__toggle-buttons - The container of buttons such as the clear and the toggle.
+// ngx-select__toggle-caret - The drop-down button of the single mode. It's available when the property multiple is false.
+// ngx-select__clear - The button clear.
+// ngx-select__clear-icon - The cross icon.
+// ngx-select__search - The input field for full text lives searching.
+// ngx-select__choices - The common container of items.
+// ngx-select__item-group - The group of items.
+// ngx-select__item - An item.
+// ngx-select__item_disabled - Modifier of a disabled item.
+// ngx-select__item_active - Modifier of the activated item.
+
+.input-select-dropdown {
+
+  &.restrict-height {
+    .ngx-select__choices.dropdown-menu.show {
+      max-height: 300px !important;
+    }
+  }
+
+  .ngx-select {
+    &:focus {
+      outline: none;
+    }
+
+    .dropdown-toggle {
+      &:after {
+        display: block;
+        position: absolute;
+        width: 16px;
+        height: 10px;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        border: none;
+        background: url('/assets/svg/icon-dropdown.svg') center no-repeat;
+        content: '';
+      }
+    }
+  }
+
+  .ngx-select__selected-single span {
+    color: $gray-900;
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  .ngx-select__toggle.form-control {
+    background-color: transparent !important;
+    border-color: $gray-900 !important;
+    padding: 9px 12px;
+    outline: 0;
+    position: relative;
+    text-align: left !important;
+    color: $gray-900 !important;
+    height: auto !important;
+    padding-right: 30px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .ngx-select.open.show {
+    .ngx-select__selected {
+      &:after {
+        position: absolute;
+        bottom: -10px;
+        right: 10px;
+        width: 0;
+        height: 0;
+        border-bottom: 10px solid $gray-900;
+        border-right: 10px solid transparent;
+        border-left: 10px solid transparent;
+        content: '';
+      }
+    }
+  }
+
+  .ngx-select__choices.dropdown-menu.show {
+    background: $gray-900;
+    transform: translateY(10px);
+    max-height: initial;
+    border: none;
+    width: auto;
+    min-width: 100%;
+
+    a {
+      color: $white !important;
+    }
+  }
+  .ngx-select__item {
+    text-align: center;
+  }
+  .ngx-select__item_active {
+    background: $gray-600 !important;
+  }
+}
+
+.input-select-dropdown__wrapper--large {
+  .ngx-select {
+    display: inline-block;
+    min-width: 100px;
+  }
+
+  .ngx-select__toggle.form-control {
+    border: none !important;
+    padding: 0 !important;
+    height: auto !important;
+    margin-bottom: 10px;
+  }
+
+  .ngx-select__selected-single span {
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 0;
+  }
+
+  .ngx-select__toggle-buttons {
+    margin-left: 30px;
+  }
+
+  .ngx-select.open.show {
+    .ngx-select__selected {
+      &:after {
+        right: 7px;
+      }
+    }
+  }
+
+}

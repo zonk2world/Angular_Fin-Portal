@@ -1,0 +1,22 @@
+@import "~bootstrap/scss/functions";
+@import "~scss/variables";
+
+.chart-bar-vertical {
+  display: flex;
+  margin-bottom: 2rem;
+  //width: 120px;
+  //max-width: 120px;
+
+  &__chart {
+    width: 75%;
+  }
+
+  &__data {
+    padding-top: 15px;
+  }
+
+  &__data-item {
+    padding-bottom: 18px;
+    font-size: 12px;
+  }
+}

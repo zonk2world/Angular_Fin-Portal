@@ -1,0 +1,230 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/mixins";
+@import "~scss/variables";
+
+
+.card_table_matrix{
+
+    .ng2-smart-row {
+      &.selected {
+        background: transparent !important;
+      }
+    }
+
+    &__toggle {
+        margin-left: 10px;
+        padding: 1px;
+        .btn {
+            border: solid 1px $gray-light;
+            color: $gray-secondary;
+            padding: 10px;
+            margin-right: 10px;
+            background: $white;
+
+            &:focus {
+                outline: none;
+                box-shadow: none;
+            }
+        }
+
+        .btn.active {
+            border-color: $blue;
+        }
+    }
+
+    .table_simple{
+        padding-top: 18px !important;
+        padding-bottom: 14px !important;
+        th{
+            font-size: 11px !important;
+            font-weight: normal !important;
+        }
+        tr td:first-child{
+            font-weight: normal !important;
+        }
+    }
+    .table_simple tr td:nth-child(2n){
+        background: #f7f8fb;
+    }
+
+    &.card_table_matrix--white-bg{
+
+        .table_simple tr td:nth-child(2n){
+            background: white;
+        }
+    }
+
+    .card-title__extended{
+        color: #FE4F4A;
+    }
+
+    table{
+        thead{
+            background-color: transparent;
+        }
+    }
+
+    tbody:before {
+        content: "";
+    }
+
+    [_nghost-c7] table {
+        tr{
+            th{
+                text-align: center;
+                font-size: 11px;
+                font-weight: 400;
+            }
+        }
+        tr td{
+            font-size: 12px;
+        }
+        tr td:nth-child(1){
+            text-align: center;
+            font-size: 11px;
+            font-weight: 400;
+        }
+    }
+
+    tr{
+        td{
+            padding: 0 !important;
+            text-align: center;
+        }
+        td:nth-child(1){
+            font-weight: bold;
+        }
+    }
+
+    .matrix_td{
+        // background: red;
+        padding : 10px;
+        margin: 1px;
+    }
+
+    .table_simple{
+        padding: 0;
+    }
+
+
+
+    // .color_FE4E49{
+    //     background: #FE4E49;
+    // };
+    // .color_F87D46{
+    //     background: #F87D46;
+    // };
+    // .color_F69444{
+    //     background: #F69444;
+    // };
+    // .color_F3AA42{
+    //     background: #F3AA42;
+    // };
+    // .color_F0C140{
+    //     background: #F0C140;
+    // };
+    // .color_EED73E{
+    //     background: #EED73E;
+    // };
+    // .color_E9EB3D{
+    //     background: #E9EB3D;
+    // };
+    // .color_CFE83B{
+    //     background: #CFE83B;
+    // };
+    // .color_B4E639{
+    //     background: #B4E639;
+    // };
+    // .color_99E338{
+    //     background: #99E338;
+    // };
+    // .color_7FE136{
+    //     background: #7FE136;
+    // };
+    // .color_65DE34{
+    //     background: #65DE34;
+    // };
+    // .color_4CDB33{
+    //     background: #4CDB33;
+    // };
+    // .color_33D931{
+    //     background: #33D931;
+    // };
+    // .color_30D645{
+    //     background: #30D645;
+    // };
+    // .color_2ED35B{
+    //     background: #2ED35B;
+    // };
+    // .color_2CD170{
+    //     background: #2CD170;
+    // };
+    // .color_2BCE85{
+    //     background: #2BCE85;
+    // };
+    // .color_2ACC9A{
+    //     background: #2ACC9A;
+    // };
+
+    .color_FE4E49{
+        background: #FE4E49;
+    }
+    .color_FB6648{
+        background: #FB6648;
+    }
+    .color_F87D46{
+        background: #F87D46;
+    }
+    .color_F69444{
+        background: #F69444;
+    }
+    .color_F3AA42{
+        background: #F3AA42;
+    }
+    .color_F0C140{
+        background: #F0C140;
+    }
+    .color_EED73E{
+        background: #EED73E;
+    }
+    .color_E9EB3D{
+        background: #E9EB3D;
+    }
+    .color_CFE83B{
+        background: #CFE83B;
+    }
+    .color_B4E639{
+        background: #B4E639;
+    }
+    .color_99E338{
+        background: #99E338;
+    }
+    .color_7FE136{
+        background: #7FE136;
+    }
+    .color_65DE34{
+        background: #65DE34;
+    }
+    .color_4CDB33{
+        background: #4CDB33;
+    }
+    .color_33D931{
+        background: #33D931;
+    }
+    .color_30D645{
+        background: #30D645;
+    }
+    .color_2ED35B{
+        background: #2ED35B;
+    }
+    .color_2CD170{
+        background: #2CD170;
+    }
+    .color_2BCE85{
+        background: #2BCE85;
+    }
+    .color_2ACC9A{
+        background: #2ACC9A;
+    }
+
+}

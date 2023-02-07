@@ -1,0 +1,12 @@
+<ngx-select
+      class="input-select-dropdown {{items.length > 11 ? 'restrict-height' : ''}}"
+      [defaultValue]="setDefault()"
+      [placeholder]="'Select'"
+      [items]="items"
+      [optionValueField]="valueKey"
+      [optionTextField]="labelKey"
+      [multiple]="false"
+      [noAutoComplete]="true"
+      [formControl]="selectControl"
+      (select)="handleSelect($event)">
+</ngx-select>

@@ -1,0 +1,69 @@
+<div class="row print-break-inside-avoid">
+    <div class="col"> <!-- row and col classes needed to prevent pdf issue where card takes up a massive amount of space -->
+        <div class="card card-default table_benchmark table_benchmark--charts"
+                [ngClass]="{'hide-charts': chartsData.length > 6}">
+            <div class="row">
+                <div class="col-sm-12 ">
+                    <div class="clearfix table_benchmark__pager-container">
+                        <div class="card-title">{{cardTitle}}
+                        <span *ngIf="tooltip" [appTourAnchor]="tooltipTourStep">
+                            <span class="i-tooltip"
+                                    placement="top"
+                                    ngbTooltip="{{tooltip}}"></span>
+                        </span>
+
+                        </div>
+                        <div *ngIf="showPager" class="table_benchmark__pagers">
+                            <span class="table__pager_button table__pager_button--left" (click)="scrollLeft()"> <span
+                                    class="sr-only">Left</span> </span>
+                            <span class="table__pager_button table__pager_button--right" (click)="scrollRight()"> <span
+                                    class="sr-only">Right</span> </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- Left table lists style factors-->
+                <div class="col-sm-3 col-sm-3--benchmark">
+                    <div class="table_benchmark__compare">
+                        <app-table-simple
+                                [header]="benchmarkHeader"
+                                [dataActive]="benchmarkData"
+                                [sort]=false
+                        ></app-table-simple>
+                    </div>
+                </div>
+
+                <!-- Right table contains charts -->
+                <div class="col-sm-9 col-sm-9--benchmark">
+                    <div class="table_benchmark__main ">
+                        <div #panel class=" table-responsive table_benchmark__chart-containe">
+                            <div class="table_simple ">
+
+                                <table class="card-table-top__table">
+                                    <thead class="">
+                                    <tr>
+                                        <th *ngFor="let chartsHeadTd of chartsHeader" class="with-{{chartsData.length}}-funds">
+                                            {{chartsHeadTd.title}}
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td *ngFor="let chartData of chartsData" class="with-{{chartsData.length}}-funds">
+                                            <app-chart-bar-vertical
+                                                    [data]="chartData"
+                                                    [range]="range"
+                                            ></app-chart-bar-vertical>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

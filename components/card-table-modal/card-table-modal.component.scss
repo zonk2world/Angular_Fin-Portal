@@ -1,0 +1,115 @@
+@import '~bootstrap/scss/functions';
+@import '~scss/variables';
+
+.card-table-modal {
+
+  .modal-dialog {
+    max-width: 370px;
+  }
+
+  &__close {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    right: -30px;
+    top: -30px;
+    &:hover {
+      cursor: pointer;
+    }
+
+    .cls-1 {
+      stroke: none;
+      fill: $white;
+    }
+  }
+
+  ng2-smart-table-title {
+    font-size: 10px;
+    text-transform: uppercase;
+  }
+
+  .ng2-smart-row {
+    &.selected {
+      background: transparent !important;
+    }
+  }
+
+  th{
+    a{
+      color: #4B5163;
+        &:hover{
+            text-decoration: none;
+        }
+    }
+    a.sort.asc::after,
+    a.sort.desc::after{
+        width: 8px;
+        height: 11px;
+        border: 0;
+        margin-bottom: -1px;
+        background: url("/assets/svg/icon-sort-arrow.svg") no-repeat !important;
+    }
+    a.sort.asc::after{
+      transform: rotate(0deg);
+    }
+    a.sort.desc::after{
+      transform: rotate(180deg);
+    }
+}
+
+  tbody:before {
+    /* This doesn't work because of border-collapse */
+    line-height:0.8em;
+    content:"_";
+    color:white;
+    display:block;
+  }
+  tbody .ng-star-inserted {
+    font-size: 12px;
+  }
+  .column_2,
+  .column_3,
+  .column_4 {
+    //width: 89px;
+  }
+
+  //.column_3{
+  //  text-align: center
+  //}
+  thead{
+    margin-bottom: 20px;
+    th{
+      background: #f0f3f7;
+      white-space: nowrap;
+    }
+    th:first-child{
+      border-top-left-radius: 3px;
+      border-bottom-left-radius: 3px;
+    }
+    th:last-child{
+      text-align: right;
+      border-top-right-radius: 3px;
+      border-bottom-right-radius: 3px;
+    }
+  }
+  tr{
+    td:first-child{
+
+    }
+    td:nth-child(2) {
+      //text-align: center;
+    }
+    td:nth-child(3) {
+      //text-align: center;
+    }
+    td:last-child {
+      text-align: right;
+      padding-right: 20px;
+    }
+    //td:nth-child(4) {
+    //  text-align: right;
+    //  padding-right: 20px;
+    //}
+  }
+
+}

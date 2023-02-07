@@ -1,0 +1,16 @@
+<div class="card-table-modal__close"
+     (click)="activeModal.close()"
+     inlineSVG="/assets/svg/icon-x-white.svg"
+>
+</div>
+
+<div class="card card-default card-table-modal">
+  <div class="card-title">
+    <span *ngIf="fundName">{{fundName}} - </span>
+    {{cardTitle}}:
+    <span class="teal">{{activeState ? 'active' : 'absolute'}}</span>
+    <span *ngIf="tooltip" class="i-tooltip" placement="top" ngbTooltip="{{tooltip}}"></span>
+  </div>
+  <ng2-smart-table #table [settings]="settings" [source]="activeState ? dataActive : dataAbsolute"></ng2-smart-table>
+
+</div>

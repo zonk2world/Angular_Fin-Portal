@@ -1,0 +1,36 @@
+<div class="form_autocomplete">
+    <ng-template #rt let-r="result" let-t="term">
+        <ng-container *ngIf="notFoundItem && ( r.displayTicker ? r.displayTicker === notFoundItem.displayTicker : r.name == notFoundItem.name) ; else item">
+            {{ r.label}}
+        </ng-container>
+        <ng-template #item>
+            {{ r.displayTicker ? r.displayTicker : r.name }} - {{ r.label}}
+        </ng-template>
+    </ng-template>
+
+    <label *ngIf="label" for="typeahead-format-{{ htmlId }}">{{label}}</label>
+    <div class="input-group">
+        <input id="typeahead-format-{{ htmlId }}"
+               placeholder="{{placeholder}}"
+               type="text"
+               class="form-control"
+               [(ngModel)]="model"
+               (ngModelChange)="onChange()"
+               [ngbTypeahead]="getSearch"
+               (focus)="focus$.next($event.target.value)"
+               (click)="click$.next($event.target.value)"
+               (blur)='onBlur($event)'
+               [resultTemplate]="rt"
+               [inputFormatter]="formatter"
+               [disabled]="!items"
+               (keydown.enter)="onEnterKeydown()"
+               #input
+               #instance="ngbTypeahead"
+        />
+        <span class="input-group-btn" *ngIf="buttonON">
+            <button class="btn btn-primary text-uppercase" type="button"
+                (click)="onAddButtonClicked(input)">{{buttonText}}</button>
+        </span>
+    </div><!-- /input-group -->
+</div>
+

@@ -1,0 +1,80 @@
+.table_benchmark.table_benchmark--charts {
+    .col-sm-9--benchmark{
+        padding-left: 13px;
+    }
+    .table_benchmark__compare {
+        thead{
+            th{
+                font-size: 12px;
+            }
+            th:first-child{
+                text-align: left;
+            }
+        }
+        td{
+            text-align: left;
+        }
+        tr td:nth-child(2) {
+            background:#F7C85D;
+        }
+        tr{
+            td{
+                height: 33px;
+            }
+        }
+        tbody{
+            margin-top: 16px;
+            display: block;
+        }
+    }
+    .table-responsive {
+        border: 1px solid #f3f5f8;
+        border-top: 0;
+        th {
+            min-width: 100px;
+            width: 120px;
+            // display: inline-block;
+        }
+        tbody{
+            // display: none;
+        }
+    }
+
+    .table_benchmark__pagers{
+        float: right;
+        .table__pager_button{
+            
+        }
+        tr td:nth-child(2n) {
+            
+        }
+ 
+    }
+    
+    .table_benchmark__chart-container{
+        white-space: nowrap;
+        .table_benchmark__chart{
+            padding-top: 10px;
+            display:inline-block;
+            white-space: normal;
+        }
+        .table_benchmark__chart:nth-child(2n+1){
+            background:#f7f8fb;
+        }
+    }
+    .table_benchmark__main{
+        table{
+            min-width: 100%;
+            td {
+                max-width: 120px;
+                padding-right: 10px;
+            }
+            th{
+                height: 36px;
+                padding: 6px 12px;
+            }
+        }
+    }
+    
+    
+}

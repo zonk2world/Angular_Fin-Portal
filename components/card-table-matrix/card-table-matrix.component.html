@@ -1,0 +1,27 @@
+<div [appTourAnchor]="matrixTourStep"
+  class="card card-default card_table_matrix {{colorMatrix ? 'card_table_matrix--white-bg' : 'card_table_matrix--striped-bg'}}">
+  <div>
+    <div class="card-title d-inline-block"
+         [appTourAnchor]="tooltipTourStep">
+      {{cardTitle}}
+      <span *ngIf="cardTitleExtended">
+      - <span class="card-title__extended">{{cardTitleExtended}}</span>
+      </span>
+      <span *ngIf="tooltip"
+
+            class="i-tooltip"
+            placement="{{tooltipPosition}}"
+            ngbTooltip="{{tooltip}}">
+      </span>
+    </div>
+    <div class="card_table_matrix__toggle d-inline-block" *ngIf="toggleEnabled">
+      <button class="btn {{activeToggle === 12 ? 'active' : ''}}" (click)="handleToggle(12)">12m</button>
+      <button class="btn {{activeToggle === 36 ? 'active' : ''}}" (click)="handleToggle(36)">36m</button>
+      <button class="btn {{activeToggle === 60 ? 'active' : ''}}" (click)="handleToggle(60)">60m</button>
+    </div>
+  </div>
+
+  <div class="table_simple">
+    <ng2-smart-table [settings]="settings" [source]="source"></ng2-smart-table>
+  </div>
+</div>

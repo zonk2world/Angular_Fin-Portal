@@ -1,0 +1,27 @@
+.form_autocomplete{
+
+    .comps-subs & {
+        label {
+            font-weight: bold;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+    }
+
+    input {
+        text-transform: uppercase;
+    }
+
+    ::placeholder {
+        text-transform: none;
+    }
+
+    .input-group-btn{
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        .btn{
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+    }
+}

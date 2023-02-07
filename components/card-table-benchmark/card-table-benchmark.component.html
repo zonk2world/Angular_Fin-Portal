@@ -1,0 +1,52 @@
+<div class="row  print-break-inside-avoid">
+  <div class="col"> <!-- row and col classes needed to prevent pdf issue where card takes up a massive amount of space -->
+    <div class="card card-default table_benchmark table_benchmark--default
+    {{firstColWidth >= 240 ? 'wide240' : (firstColWidth >= 200 ? 'wide200' : 'wideDefault')}}">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="clearfix">
+            <div class="card-title">{{cardTitle}}<span *ngIf="dataAbsolute">:</span>
+              <span *ngIf="dataAbsolute" class="teal">
+                {{activeState ? 'active' : 'absolute'}}
+              </span>&nbsp;
+              <span [appTourAnchor]="tooltipStep">
+                <span *ngIf="tooltip"
+                      class="i-tooltip"
+                      [placement]="tooltipPlacement"
+                      [ngbTooltip]="tipContent"
+                      container="body">
+                  </span>
+              </span>
+
+            </div>
+            <div class="table_benchmark__sign"><span class="custom-pill custom-pill--absolute"></span> {{dynamicBenchLabel}}
+            </div>
+            <div *ngIf="showPager" class="table_benchmark__pagers">
+              <span class="table__pager_button table__pager_button--left" (click)="scrollLeft()"> <span
+                class="sr-only">Left</span> </span>
+              <span class="table__pager_button table__pager_button--right" (click)="scrollRight()"> <span class="sr-only">Right</span> </span>
+            </div>
+          </div>
+          <div class="table_benchmark__main">
+            <div #panel class="table-responsive">
+              <app-table-simple
+                [activeState]="activeState"
+                [header]="header"
+                [dataActive]="dataActive"
+                [dataAbsolute]="dataAbsolute"
+                [sortAsNumbers]=true
+                [sort]='sort'
+                [sortColumnId]="sortColumnId"
+                [sortColumnDirection]="sortColumnDirection"
+              ></app-table-simple>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #tipContent>
+  <div [innerHTML]="tooltip"></div>
+</ng-template>

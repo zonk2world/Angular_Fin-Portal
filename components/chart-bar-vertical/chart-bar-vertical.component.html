@@ -1,0 +1,28 @@
+<div class="chart-bar-vertical">
+
+  <div class="chart-bar-vertical__chart"
+        [style.height.px]="chartHeight">
+    <ngx-charts-bar-horizontal
+            *ngIf="data"
+            class="chart-container"
+            [animations]="true"
+            [xAxis]="true"
+            [yAxis]="false"
+            [xAxisTickFormatting]="format"
+            [scheme]="colorScheme"
+            [customColors]="customColors"
+            [barPadding]="12"
+            [xScaleMax]="range.max"
+            [xScaleMin]="range.min"
+            [results]="data">
+    </ngx-charts-bar-horizontal>
+  </div>
+
+  <div class="chart-bar-vertical__data" *ngIf="data">
+    <div class="chart-bar-vertical__data-item" *ngFor="let item of data">
+      {{item.value}}
+    </div>
+  </div>
+
+
+</div>
